@@ -1,0 +1,14 @@
+.p-card {
+    max-width: 400px;
+    min-width: 220px;
+    flex-grow: 1;
+}
+
+.p-card .p-card-footer {
+    padding: 0;
+}
+
+.card-footer {
+    padding-top: 18px;
+    border-top: 1.5px var(--surface-200) solid;
+}

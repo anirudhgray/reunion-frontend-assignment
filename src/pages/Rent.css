@@ -1,0 +1,52 @@
+.p-dropdown .p-inputtext,
+.p-calendar .p-inputtext,
+.p-calendar .p-button,
+.p-dropdown p-dropdown-label {
+    padding: 0rem;
+    width: min-content;
+}
+
+.p-calendar {
+    width: 100%;
+}
+
+.p-dropdown .p-dropdown-trigger {
+    width: fit-content;
+}
+
+.p-dropdown,
+.p-calendar .p-inputtext {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 0;
+    margin: 0;
+}
+
+.p-datepicker-trigger {
+    background-color: transparent;
+    color: var(--indigo-700);
+    border: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.p-dropdown-label,
+.p-calendar .p-inputtext {
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.filter {
+    padding-left: 1.5rem;
+    border-left: 1.5px var(--surface-200) solid;
+}
+
+.property-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grey {
+    color: var(--surface-500);
+}
