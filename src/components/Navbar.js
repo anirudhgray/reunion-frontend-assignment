@@ -18,10 +18,13 @@ const resources = [
  
 export default function Navbar() {
   return (
-    <div className="flex flex-row justify-content-between align-items-center py-4 px-6">
-      <div className='flex flex-row gap-7 align-items-center'>
-        <img alt='logo'></img>
-        <nav className='flex flex-row xl:gap-4 lg:gap-3 md:gap-2 gap-1'>
+    <div className="flex flex-row justify-content-between align-items-center lg:py-4 py-3 lg:px-6 px-3">
+      <div className='flex flex-row xl:gap-7 lg:gap-6 gap-4 align-items-center'>
+        <span style={{'color':'var(--indigo-800'}} className='flex text-xl font-bold flex-row gap-2 align-items-center'>
+          <img height={28} alt='logo' src={require('../assets/logo.png')}></img>
+          Estatery
+        </span>
+        <nav className='md:flex hidden flex-row xl:gap-4 lg:gap-3 gap-1'>
           <Button label='Rent' className='text-sm menu-button-selected menu-button p-button-text' />
           <Button className='text-sm menu-button p-button-text p-button-secondary' label='Buy' />
           <Button className='text-sm menu-button p-button-text p-button-secondary' label='Sell' />

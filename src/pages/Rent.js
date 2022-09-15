@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import './Rent.css'
 import Layout from '../components/Layout'
 import { InputText } from 'primereact/inputtext'
@@ -13,6 +13,7 @@ export default function Rent() {
   const [selectedGroupedCity, setSelectedGroupedCity] = useState(null)
   const [selectedPriceRange, setSelectedPriceRange] = useState(null)
   const [moveInDate, setMoveInDate] = useState(null)
+  const [rentData, setRentData] = useState([])
 
   const groupedCities = [
     {
@@ -58,6 +59,21 @@ export default function Rent() {
     setSelectedPriceRange(e.value)
   }
 
+  const fetchData = () => {
+    fetch('data.json')
+    .then(res => res.json())
+    .then(data => {
+      setRentData(data)
+      console.log(data)
+    })
+    .catch(e => console.log(e))
+  }
+
+  useEffect(() => {
+    fetchData()
+  }, [])
+  
+
   return (
     <Layout>
       <div className='flex flex-row justify-content-between'>
@@ -67,7 +83,7 @@ export default function Rent() {
             <InputText className='text-sm' value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search with Search Bar" />
         </span>
       </div>
-      <div className='overflow-auto mt-5 p-4 px-5 flex flex-row align-items-center justify-content-between bg-white border-round-sm gap-4'>
+      <div className='flex-wrap mt-5 p-4 px-5 flex flex-row align-items-center justify-content-between bg-white border-round-sm gap-4'>
         <div className='flex-grow-1'>
           <p className='grey text-sm font-medium'>Location</p>
           <Dropdown className='mt-2' value={selectedGroupedCity} options={groupedCities} onChange={onGroupedCityChange} optionLabel="label" optionGroupLabel="label" optionGroupChildren="items" placeholder='Select a city'
@@ -92,9 +108,9 @@ export default function Rent() {
         </div>
       </div>
       <div className='mt-6 gap-4 property-cards-container'>
-        <PropertyCard />
-        <PropertyCard />
-        <PropertyCard />
+        {rentData.map(house => {
+          return (<PropertyCard name={house.name} price={house.price} location={house.location} address={house.address} beds={house.beds} bathrooms={house.bathrooms} popular={house.popular} area={house.area} img={house.img} />)
+        })}
       </div>
     </Layout>
   )

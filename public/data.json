@@ -1,0 +1,72 @@
+[
+    {
+        "img": "house1",
+        "price": 2095,
+        "name": "Palm Harbor",
+        "address": "2699 Green Valley, Highland Lake, FL",
+        "beds": 3,
+        "bathrooms": 2,
+        "area": {
+            "x": 5,
+            "y": 7
+        },
+        "location": "New York",
+        "popular": true
+    },
+    {
+        "img": "house2",
+        "price": 2095,
+        "name": "Palm Harbor",
+        "address": "2699 Green Valley, Highland Lake, FL",
+        "beds": 3,
+        "bathrooms": 2,
+        "area": {
+            "x": 5,
+            "y": 7
+        },
+        "location": "New York",
+        "popular": true
+    },
+    {
+        "img": "house3",
+        "price": 2095,
+        "name": "Palm Harbor",
+        "address": "2699 Green Valley, Highland Lake, FL",
+        "beds": 3,
+        "bathrooms": 2,
+        "area": {
+            "x": 5,
+            "y": 7
+        },
+        "location": "New York",
+        "popular": true
+    },
+    {
+        "img": "house4",
+        "price": 2095,
+        "name": "Palm Harbor",
+        "address": "2699 Green Valley, Highland Lake, FL",
+        "beds": 3,
+        "bathrooms": 2,
+        "area": {
+            "x": 5,
+            "y": 7
+        },
+        "location": "New York",
+        "popular": false
+    },
+    {
+        "img": "house5",
+        "price": 2095,
+        "name": "Palm Harbor",
+        "address": "2699 Green Valley, Highland Lake, FL",
+        "beds": 3,
+        "bathrooms": 2,
+        "area": {
+            "x": 5,
+            "y": 7
+        },
+        "location": "New York",
+        "popular": false
+    }
+]
