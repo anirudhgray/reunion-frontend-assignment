@@ -113,7 +113,7 @@ export default function Rent() {
   return (
     <Layout>
       <div className='flex flex-wrap flex-row justify-content-between gap-4'>
-        <h1>Search properties to rent</h1>
+        <h1 className='md:text-4xl sm:text-3xl text-2xl'>Search properties to rent</h1>
         <span className="ml-auto p-input-icon-left">
             <i className="pi pi-search" />
             <InputText onKeyUp={fetchSearch} className='text-sm' value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search with Search Bar" />

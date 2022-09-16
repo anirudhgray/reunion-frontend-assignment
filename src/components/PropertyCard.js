@@ -12,15 +12,15 @@ export default function PropertyCard({img = 'house1', price=1800, name="Green He
 
   const footer = (
     <div className='card-footer flex flex-row justify-content-between align-items-center'>
-      <span className='flex flex-row gap-2 align-items-center'>
+      <span className='flex flex-row sm:gap-2 gap-1 align-items-center'>
         <img height={23} src={require('../assets/bed.png')} alt='bed'></img>
         <p className='text-xs'>{beds} Beds</p>
       </span>
-      <span className='flex flex-row gap-2 align-items-center'>
+      <span className='flex flex-row sm:gap-2 gap-1 align-items-center'>
         <img height={21} src={require('../assets/bathtub.png')} alt='bed'></img>
         <p className='text-xs'>{bathrooms} Bathrooms</p>
       </span>
-      <span className='flex flex-row gap-2 align-items-center'>
+      <span className='flex flex-row sm:gap-2 gap-1 align-items-center'>
         <img height={21} src={require('../assets/area.png')} alt='bed'></img>
         <p className='text-xs'>{area.x}x{area.y} m<sup>2</sup></p>
       </span>

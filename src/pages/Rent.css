@@ -54,7 +54,7 @@
 
 .property-cards-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .grey {
@@ -71,5 +71,14 @@
     .filter {
         padding-left: 0;
         border-left: none;
+    }
+}
+
+@media (max-width:350px) {
+
+    .p-dropdown-label,
+    .p-calendar .p-inputtext {
+        font-size: 0.85rem;
+        font-weight: 800;
     }
 }
