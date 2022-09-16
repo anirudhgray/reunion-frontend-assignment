@@ -119,24 +119,24 @@ export default function Rent() {
             <InputText onKeyUp={fetchSearch} className='text-sm' value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search with Search Bar" />
         </span>
       </div>
-      <div className='flex-wrap mt-5 p-4 px-5 flex flex-row align-items-center justify-content-between bg-white border-round-sm gap-4'>
+      <div className='flex-wrap mt-5 p-4 px-5 flex flex-row align-items-center justify-content-between bg-white border-round-sm lg:gap-4 gap-3'>
         <div className='flex-grow-1'>
-          <p className='grey text-sm font-medium'>Location</p>
-          <Dropdown filter showClear className='mt-2' value={selectedGroupedCity} options={groupedCities} onChange={onGroupedCityChange} optionLabel="label" optionGroupLabel="label" optionGroupChildren="items" placeholder='Select a city'
+          <p className='grey xl:text-sm text-xs font-medium'>Location</p>
+          <Dropdown filter showClear className='mt-2' value={selectedGroupedCity} options={groupedCities} onChange={onGroupedCityChange} optionLabel="label" optionGroupLabel="label" optionGroupChildren="items" placeholder='City'
           />
         </div>
         <div className='filter flex-grow-1'>
-          <p className='grey text-sm font-medium'>When</p>
-          <Calendar showButtonBar className='mt-2' id="icon" value={moveInDate} onChange={(e) => setMoveInDate(new Date(e.value).getTime()/1000)} showIcon placeholder='Select move-in date' />
+          <p className='grey xl:text-sm text-xs font-medium'>When</p>
+          <Calendar showButtonBar className='mt-2' id="icon" value={moveInDate} onChange={(e) => setMoveInDate(new Date(e.value).getTime()/1000)} showIcon placeholder='Select Move-in Date' />
         </div>
         <div className='filter flex-grow-1'>
-          <p className='grey text-sm font-medium'>Price</p>
-          <Dropdown showClear className='mt-2' value={selectedPriceRange} options={priceRanges} onChange={onPriceRangeChange} placeholder="Select a price range"
+          <p className='grey xl:text-sm text-xs font-medium'>Price</p>
+          <Dropdown showClear className='mt-2' value={selectedPriceRange} options={priceRanges} onChange={onPriceRangeChange} placeholder="Select"
           />
         </div>
         <div className='filter flex-grow-1'>
-          <p className='grey text-sm font-medium'>Property Type</p>
-          <Dropdown showClear className='mt-2' value={selectedPropertyType} options={propertyTypes} onChange={onPropertyTypeChange} placeholder="Select a property type"
+          <p className='grey xl:text-sm text-xs font-medium'>Property Type</p>
+          <Dropdown showClear className='mt-2' value={selectedPropertyType} options={propertyTypes} onChange={onPropertyTypeChange} placeholder="Select"
           />
         </div>
         <div className='ml-auto filter '>
