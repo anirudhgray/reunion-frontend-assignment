@@ -1,9 +1,9 @@
 [
     {
         "img": "house1",
-        "price": 2095,
+        "price": 6095,
         "name": "Palm Harbor",
-        "address": "2699 Green Valley, Highland Lake, FL",
+        "address": "2699 Green Valley, Highland Lake, NY",
         "beds": 3,
         "bathrooms": 2,
         "area": {
@@ -11,40 +11,94 @@
             "y": 7
         },
         "location": "New York",
-        "popular": true
+        "popular": true,
+        "propertyType": "Bungalow",
+        "freeFrom": 1664502200
+    },
+    {
+        "img": "apartment2",
+        "price": 2095,
+        "name": "Castle View",
+        "address": "299 Old Osaka Rd, Osaka, JP",
+        "beds": 2,
+        "bathrooms": 1,
+        "area": {
+            "x": 4,
+            "y": 6
+        },
+        "location": "Osaka",
+        "popular": true,
+        "propertyType": "Apartment",
+        "freeFrom": 1660202200
     },
     {
         "img": "house2",
-        "price": 2095,
-        "name": "Palm Harbor",
-        "address": "2699 Green Valley, Highland Lake, FL",
+        "price": 1595,
+        "name": "Green Valley",
+        "address": "2699 Green Valley, Highland Lake, LA",
         "beds": 3,
         "bathrooms": 2,
         "area": {
             "x": 5,
             "y": 7
         },
-        "location": "New York",
-        "popular": true
+        "location": "Los Angeles",
+        "popular": true,
+        "propertyType": "Bungalow",
+        "freeFrom": 1662802200
     },
     {
         "img": "house3",
-        "price": 2095,
-        "name": "Palm Harbor",
-        "address": "2699 Green Valley, Highland Lake, FL",
+        "price": 5095,
+        "name": "Marlinspike",
+        "address": "300 Windy City, Chicago, IL",
         "beds": 3,
         "bathrooms": 2,
         "area": {
             "x": 5,
             "y": 7
         },
-        "location": "New York",
-        "popular": true
+        "location": "Chicago",
+        "popular": true,
+        "propertyType": "Bungalow",
+        "freeFrom": 1662502200
+    },
+    {
+        "img": "apartment1",
+        "price": 2095,
+        "name": "Hamburger Heights",
+        "address": "299 Rhine Valley, Hamburg, DE",
+        "beds": 3,
+        "bathrooms": 2,
+        "area": {
+            "x": 5,
+            "y": 7
+        },
+        "location": "Hamburg",
+        "popular": false,
+        "propertyType": "Apartment",
+        "freeFrom": 1666202200
+    },
+    {
+        "img": "apartment9",
+        "price": 10095,
+        "name": "Windy Towers",
+        "address": "300 Windy City, Chicago, IL",
+        "beds": 3,
+        "bathrooms": 2,
+        "area": {
+            "x": 5,
+            "y": 7
+        },
+        "location": "Chicago",
+        "popular": false,
+        "propertyType": "Bungalow",
+        "freeFrom": 1666602200
     },
     {
         "img": "house4",
-        "price": 2095,
-        "name": "Palm Harbor",
+        "price": 2595,
+        "name": "Scandinavian Home",
         "address": "2699 Green Valley, Highland Lake, FL",
         "beds": 3,
         "bathrooms": 2,
@@ -52,13 +106,15 @@
             "x": 5,
             "y": 7
         },
-        "location": "New York",
-        "popular": false
+        "location": "Los Angeles",
+        "popular": false,
+        "propertyType": "Bungalow",
+        "freeFrom": 1666202200
     },
     {
         "img": "house5",
-        "price": 2095,
-        "name": "Palm Harbor",
+        "price": 3095,
+        "name": "Woodshire",
         "address": "2699 Green Valley, Highland Lake, FL",
         "beds": 3,
         "bathrooms": 2,
@@ -67,6 +123,200 @@
             "y": 7
         },
         "location": "New York",
-        "popular": false
+        "popular": false,
+        "propertyType": "Bungalow",
+        "freeFrom": 1663612200
+    },
+    {
+        "img": "apartment6",
+        "price": 2095,
+        "name": "TT",
+        "address": "2699 Green Valley, Highland Lake, NY",
+        "beds": 3,
+        "bathrooms": 2,
+        "area": {
+            "x": 5,
+            "y": 7
+        },
+        "location": "New York",
+        "popular": false,
+        "propertyType": "Apartment",
+        "freeFrom": 1663612200
+    },
+    {
+        "img": "apartment7",
+        "price": 4095,
+        "name": "Stark Tower",
+        "address": "2699 Green Valley, Highland Lake, NY",
+        "beds": 3,
+        "bathrooms": 2,
+        "area": {
+            "x": 5,
+            "y": 7
+        },
+        "location": "New York",
+        "popular": false,
+        "propertyType": "Apartment",
+        "freeFrom": 1665612200
+    },
+    {
+        "img": "house8",
+        "price": 4995,
+        "name": "Murimiya Holdings",
+        "address": "13 Crown Rd, Osaka, JP",
+        "beds": 2,
+        "bathrooms": 2,
+        "area": {
+            "x": 6,
+            "y": 7
+        },
+        "location": "Osaka",
+        "popular": false,
+        "propertyType": "Bungalow",
+        "freeFrom": 1664202200
+    },
+    {
+        "img": "house6",
+        "price": 12999,
+        "name": "Deutsche Luxury Towers",
+        "address": "599 Rhine Valley, Hamburg, DE",
+        "beds": 4,
+        "bathrooms": 4,
+        "area": {
+            "x": 9,
+            "y": 10
+        },
+        "location": "Hamburg",
+        "popular": false,
+        "propertyType": "Bungalow",
+        "freeFrom": 1668202200
+    },
+    {
+        "img": "apartment3",
+        "price": 7995,
+        "name": "Against The Wall",
+        "address": "599 Wall District, Berlin, DE",
+        "beds": 3,
+        "bathrooms": 2,
+        "area": {
+            "x": 7,
+            "y": 5
+        },
+        "location": "Berlin",
+        "popular": false,
+        "propertyType": "Apartment",
+        "freeFrom": 1668202200
+    },
+    {
+        "img": "apartment4",
+        "price": 8995,
+        "name": "Golden Gate Heights",
+        "address": "599 Bay Area, SF, CA",
+        "beds": 1,
+        "bathrooms": 1,
+        "area": {
+            "x": 5,
+            "y": 4
+        },
+        "location": "San Francisco",
+        "popular": false,
+        "propertyType": "Apartment",
+        "freeFrom": 1668202200
+    },
+    {
+        "img": "apartment8",
+        "price": 4995,
+        "name": "Eastside",
+        "address": "899 Wall District, Berlin, DE",
+        "beds": 3,
+        "bathrooms": 2,
+        "area": {
+            "x": 7,
+            "y": 5
+        },
+        "location": "Berlin",
+        "popular": false,
+        "propertyType": "Apartment",
+        "freeFrom": 1668202200
+    },
+    {
+        "img": "unconventional1",
+        "price": 20000,
+        "name": "Spooky Spooky Spooky",
+        "address": "899 Bay Area, SF, CA",
+        "beds": 1,
+        "bathrooms": 0,
+        "area": {
+            "x": 5,
+            "y": 4
+        },
+        "location": "San Francisco",
+        "popular": false,
+        "propertyType": "Unconventional",
+        "freeFrom": 1662202200
+    },
+    {
+        "img": "house10",
+        "price": 8995,
+        "name": "The House",
+        "address": "18 Old Square, Tokyo, JP",
+        "beds": 2,
+        "bathrooms": 2,
+        "area": {
+            "x": 8,
+            "y": 7
+        },
+        "location": "Tokyo",
+        "popular": false,
+        "propertyType": "Bungalow",
+        "freeFrom": 1666202200
+    },
+    {
+        "img": "house7",
+        "price": 4995,
+        "name": "Manga Holdings",
+        "address": "12 Crown Rd, Osaka, JP",
+        "beds": 2,
+        "bathrooms": 2,
+        "area": {
+            "x": 6,
+            "y": 7
+        },
+        "location": "Osaka",
+        "popular": false,
+        "propertyType": "Bungalow",
+        "freeFrom": 1668202200
+    },
+    {
+        "img": "apartment5",
+        "price": 1495,
+        "name": "Disney Land",
+        "address": "2699 Disney Ave., LA, CA",
+        "beds": 4,
+        "bathrooms": 2,
+        "area": {
+            "x": 7,
+            "y": 9
+        },
+        "location": "Los Angeles",
+        "popular": false,
+        "propertyType": "Apartment",
+        "freeFrom": 1666202200
+    },
+    {
+        "img": "house9",
+        "price": 6995,
+        "name": "Murimiya Holdings",
+        "address": "13 Palace Square, Tokyo, JP",
+        "beds": 2,
+        "bathrooms": 2,
+        "area": {
+            "x": 8,
+            "y": 7
+        },
+        "location": "Tokyo",
+        "popular": false,
+        "propertyType": "Bungalow",
+        "freeFrom": 1666202200
     }
 ]

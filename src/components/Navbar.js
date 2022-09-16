@@ -33,8 +33,8 @@ export default function Navbar() {
         </nav>
       </div>
       <div className='flex flex-row gap-3'>
-        <Button label='Login' className='text-sm p-button-outlined' />
-        <Button label='Sign Up' className='text-sm ' />
+        <Button label='Login' className='text-sm p-button-outlined auth-buttons' />
+        <Button label='Sign Up' className='text-sm auth-buttons' />
       </div>
     </div>
   )

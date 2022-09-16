@@ -5,6 +5,7 @@ import { InputText } from 'primereact/inputtext'
 import {Button} from 'primereact/button'
 import {Dropdown} from 'primereact/dropdown'
 import {Calendar} from 'primereact/calendar'
+import CustomSkeleton from '../components/CustomSkeleton'
 import PropertyCard from '../components/PropertyCard'
 
 export default function Rent() {
@@ -12,17 +13,17 @@ export default function Rent() {
   const [search, setSearch] = useState("")
   const [selectedGroupedCity, setSelectedGroupedCity] = useState(null)
   const [selectedPriceRange, setSelectedPriceRange] = useState(null)
+  const [selectedPropertyType, setSelectedPropertyType] = useState(null)
   const [moveInDate, setMoveInDate] = useState(null)
   const [rentData, setRentData] = useState([])
+  const [loading, setLoading] = useState(false)
 
   const groupedCities = [
     {
         label: 'Germany', code: 'DE',
         items: [
             { label: 'Berlin', value: 'Berlin' },
-            { label: 'Frankfurt', value: 'Frankfurt' },
             { label: 'Hamburg', value: 'Hamburg' },
-            { label: 'Munich', value: 'Munich' }
         ]
     },
     {
@@ -37,7 +38,6 @@ export default function Rent() {
     {
         label: 'Japan', code: 'JP',
         items: [
-            { label: 'Kyoto', value: 'Kyoto' },
             { label: 'Osaka', value: 'Osaka' },
             { label: 'Tokyo', value: 'Tokyo' },
             { label: 'Yokohama', value: 'Yokohama' }
@@ -46,10 +46,16 @@ export default function Rent() {
   ];
 
   const priceRanges = [
-    { label: '$500 - $2,500', value: 0 },
-    { label: '$2,500 - $5,000', value: 1 },
-    { label: '$5,000 - $10,000', value: 2 },
-    { label: '$10,000 +', value: 3 },
+    { label: '$500 - $2,500', value: '$500 - $2500' },
+    { label: '$2,500 - $5,000', value: '$2500 - $5000' },
+    { label: '$5,000 - $10,000', value: '$5000 - $10000' },
+    { label: '$10,000 +', value: '$10000 - ' },
+  ];
+
+  const propertyTypes = [
+    { label: 'Bungalow', value:'Bungalow' },
+    { label: 'Apartment', value: 'Apartment' },
+    { label: 'Unconventional', value: 'Unconventional'}
   ];
   
   const onGroupedCityChange = (e) => {
@@ -58,59 +64,94 @@ export default function Rent() {
   const onPriceRangeChange = (e) => {
     setSelectedPriceRange(e.value)
   }
+  const onPropertyTypeChange = (e) => {
+    setSelectedPropertyType(e.value)
+  }
 
-  const fetchData = () => {
+  useEffect(() => {
+    setLoading(true)
     fetch('data.json')
     .then(res => res.json())
     .then(data => {
       setRentData(data)
-      console.log(data)
+      setTimeout(() => {
+        setLoading(false)
+      }, 400);
+    })
+    .catch(e => console.log(e))
+  }, [])
+
+  const fetchSearch = () => {
+    setLoading(true)
+    fetch('data.json')
+    .then(res => res.json())
+    .then(data => {
+      let result = data
+      if (selectedGroupedCity) {
+        result = result.filter(data => data.location === selectedGroupedCity)
+      }
+      if (selectedPriceRange) {
+        result = result.filter(data => ((selectedPriceRange.split(' - ')[1] ? data.price < selectedPriceRange.split(' - ')[1].slice(1) : true) && data.price >= selectedPriceRange.split(' - ')[0].slice(1)))
+      }
+      if (selectedPropertyType) {
+        result = result.filter(data => data.propertyType === selectedPropertyType)
+      }
+      if (moveInDate) {
+        result = result.filter(data => (data.freeFrom <= moveInDate))
+      }
+      if (search) {
+        result = result.filter(data => (data.name.toLowerCase().includes(search.toLowerCase())))
+      }
+      setRentData(result)
+      setTimeout(() => {
+        setLoading(false)
+      }, 400);
     })
     .catch(e => console.log(e))
   }
 
-  useEffect(() => {
-    fetchData()
-  }, [])
-  
-
   return (
     <Layout>
-      <div className='flex flex-row justify-content-between'>
+      <div className='flex flex-wrap flex-row justify-content-between gap-4'>
         <h1>Search properties to rent</h1>
-        <span className="p-input-icon-left">
+        <span className="ml-auto p-input-icon-left">
             <i className="pi pi-search" />
-            <InputText className='text-sm' value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search with Search Bar" />
+            <InputText onKeyUp={fetchSearch} className='text-sm' value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search with Search Bar" />
         </span>
       </div>
       <div className='flex-wrap mt-5 p-4 px-5 flex flex-row align-items-center justify-content-between bg-white border-round-sm gap-4'>
         <div className='flex-grow-1'>
           <p className='grey text-sm font-medium'>Location</p>
-          <Dropdown className='mt-2' value={selectedGroupedCity} options={groupedCities} onChange={onGroupedCityChange} optionLabel="label" optionGroupLabel="label" optionGroupChildren="items" placeholder='Select a city'
+          <Dropdown filter showClear className='mt-2' value={selectedGroupedCity} options={groupedCities} onChange={onGroupedCityChange} optionLabel="label" optionGroupLabel="label" optionGroupChildren="items" placeholder='Select a city'
           />
         </div>
         <div className='filter flex-grow-1'>
           <p className='grey text-sm font-medium'>When</p>
-          <Calendar className='mt-2' id="icon" value={moveInDate} onChange={(e) => setMoveInDate(e.value)} showIcon placeholder='Select move-in date' />
+          <Calendar showButtonBar className='mt-2' id="icon" value={moveInDate} onChange={(e) => setMoveInDate(new Date(e.value).getTime()/1000)} showIcon placeholder='Select move-in date' />
         </div>
         <div className='filter flex-grow-1'>
           <p className='grey text-sm font-medium'>Price</p>
-          <Dropdown className='mt-2' value={selectedPriceRange} options={priceRanges} onChange={onPriceRangeChange} placeholder="Select a price range"
+          <Dropdown showClear className='mt-2' value={selectedPriceRange} options={priceRanges} onChange={onPriceRangeChange} placeholder="Select a price range"
           />
         </div>
         <div className='filter flex-grow-1'>
           <p className='grey text-sm font-medium'>Property Type</p>
-          <Dropdown className='mt-2' value={selectedPriceRange} options={priceRanges} onChange={onPriceRangeChange} placeholder="Select a property type"
+          <Dropdown showClear className='mt-2' value={selectedPropertyType} options={propertyTypes} onChange={onPropertyTypeChange} placeholder="Select a property type"
           />
         </div>
-        <div className='filter '>
-          <Button label="Search"></Button>
+        <div className='ml-auto filter '>
+          <Button onClick={fetchSearch} label="Search"></Button>
         </div>
       </div>
       <div className='mt-6 gap-4 property-cards-container'>
-        {rentData.map(house => {
-          return (<PropertyCard name={house.name} price={house.price} location={house.location} address={house.address} beds={house.beds} bathrooms={house.bathrooms} popular={house.popular} area={house.area} img={house.img} />)
-        })}
+        {!loading ? rentData.map((house, id) => {
+          return (<PropertyCard key={id} name={house.name} price={house.price} location={house.location} address={house.address} beds={house.beds} bathrooms={house.bathrooms} popular={house.popular} area={house.area} img={house.img} />)
+        }):
+        [...Array(10)].map((house, id) => {
+          return (<CustomSkeleton key={id} />)
+        }) 
+        }
+        {!loading && !rentData.length ? <p className='indigo'>No listings matching your search :(</p> :null}
       </div>
     </Layout>
   )

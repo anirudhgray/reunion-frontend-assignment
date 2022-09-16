@@ -4,6 +4,7 @@
 .p-dropdown p-dropdown-label {
     padding: 0rem;
     width: min-content;
+    box-shadow: none;
 }
 
 .p-calendar {
@@ -14,6 +15,14 @@
     width: fit-content;
 }
 
+.p-dropdown.p-focus {
+    box-shadow: none !important;
+}
+
+.p-inputtext:enabled:focus {
+    box-shadow: none !important;
+}
+
 .p-dropdown,
 .p-calendar .p-inputtext {
     display: flex;
@@ -21,6 +30,7 @@
     justify-content: space-between;
     border: 0;
     margin: 0;
+    box-shadow: none;
 }
 
 .p-datepicker-trigger {
@@ -49,4 +59,11 @@
 
 .grey {
     color: var(--surface-500);
+}
+
+@media (max-width:700px) {
+    .filter {
+        padding-left: 0;
+        border-left: none;
+    }
 }

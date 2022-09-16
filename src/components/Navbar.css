@@ -12,3 +12,9 @@
         padding: 0.55rem 0.55rem;
     }
 }
+
+@media (max-width: 700px) {
+    .auth-buttons {
+        padding: 0.65rem 0.65rem;
+    }
+}

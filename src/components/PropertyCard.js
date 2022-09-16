@@ -22,7 +22,7 @@ export default function PropertyCard({img = 'house1', price=1800, name="Green He
       </span>
       <span className='flex flex-row gap-2 align-items-center'>
         <img height={21} src={require('../assets/area.png')} alt='bed'></img>
-        <p className='text-xs'>{area.x}x{area.y} m2</p>
+        <p className='text-xs'>{area.x}x{area.y} m<sup>2</sup></p>
       </span>
     </div>
   )
