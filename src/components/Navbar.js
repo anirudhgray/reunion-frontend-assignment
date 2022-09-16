@@ -1,20 +1,18 @@
 
 import React from 'react'
 import {Button} from 'primereact/button'
-import {Dropdown} from 'primereact/dropdown'
-import { Menubar } from 'primereact/menubar';
 import './Navbar.css'
 
-const properties = [
-  { name: 'Bungalows', code: 'B' },
-  { name: 'Appartments', code: 'A' },
-  { name: 'Condos', code: 'C' }
-];
+// const properties = [
+//   { name: 'Bungalows', code: 'B' },
+//   { name: 'Appartments', code: 'A' },
+//   { name: 'Condos', code: 'C' }
+// ];
 
-const resources = [
-  { name: 'Future Plans', code: 'FP' },
-  { name: 'Legalese', code: 'L' }
-];
+// const resources = [
+//   { name: 'Future Plans', code: 'FP' },
+//   { name: 'Legalese', code: 'L' }
+// ];
  
 export default function Navbar() {
   return (
@@ -28,8 +26,8 @@ export default function Navbar() {
           <Button label='Rent' className='text-sm menu-button-selected menu-button p-button-text' />
           <Button className='text-sm menu-button p-button-text p-button-secondary' label='Buy' />
           <Button className='text-sm menu-button p-button-text p-button-secondary' label='Sell' />
-          <Button className='text-sm menu-button p-button-text p-button-secondary' label='Manage properties' />
-          <Button className='text-sm menu-button p-button-text p-button-secondary' label='Resources' />
+          <Button className='text-sm menu-button p-button-text p-button-secondary' label='Manage properties &#8595;' />
+          <Button className='text-sm menu-button p-button-text p-button-secondary' label='Resources &#8595;' />
         </nav>
       </div>
       <div className='flex flex-row gap-3'>
