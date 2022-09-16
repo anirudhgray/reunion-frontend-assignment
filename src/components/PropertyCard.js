@@ -27,14 +27,28 @@ export default function PropertyCard({img = 'house1', price=1800, name="Green He
     </div>
   )
 
+  const hover = (heart) => {
+    console.log("hover")
+    heart.height = 26.5
+    heart.style.marginTop = '0.10rem'
+    heart.style.marginRight = '0.65rem'
+    heart.src = require('../assets/heart-full.png')
+  }
+  const remove = (heart) => {
+    heart.height = 22
+    heart.style.marginTop = '0.19rem'
+    heart.style.marginRight = '0.78rem'
+    heart.src = require('../assets/heart.png')
+  }
+
   return (
     <Card className='relative' footer={footer} header={header}>
       <span className='relative text-xs flex align-items-center'>
         {popular ?
-        <span className='popular absolute bottom-50 left-0 text-xs p-2 px-4 font-semibold'>POPULAR</span>
+        <span className='popular flex flex-row align-items-center absolute bottom-50 left-0 text-xs p-2 px-3 gap-2 font-semibold'><img height={12} alt='sparkled' src={require('../assets/sparkles.png')}></img>POPULAR</span>
         :null}
         <img height={65} alt='circle' className='absolute top-0 right-0' style={{'marginTop':'-1.2rem', 'marginRight':'-0.5rem'}} src={require('../assets/circle.png')}></img>
-        <img height={22} alt='circle' className='absolute top-0 right-0' style={{'marginTop':'0.19rem','marginRight':'0.78rem'}} src={require('../assets/heart.png')}></img>
+        <img onMouseEnter={(e) => hover(e.currentTarget)} onMouseLeave={(e) => remove(e.currentTarget)} height={22} alt='circle' className='absolute top-0 right-0' style={{'marginTop':'0.19rem','marginRight':'0.78rem'}} src={require('../assets/heart.png')}></img>
         <p className='text-2xl font-bold indigo'>${price}</p>
         <p className='mt-1'>/month</p>
       </span>

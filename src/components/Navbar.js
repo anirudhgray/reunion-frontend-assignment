@@ -18,7 +18,7 @@ export default function Navbar() {
   return (
     <div className="flex flex-row justify-content-between align-items-center lg:py-4 py-3 lg:px-6 px-3">
       <div className='flex flex-row xl:gap-7 lg:gap-6 gap-4 align-items-center'>
-        <span style={{'color':'var(--indigo-800'}} className='flex text-xl font-bold flex-row gap-2 align-items-center'>
+        <span style={{'color':'var(--indigo-900'}} className='flex text-xl font-bold flex-row gap-2 align-items-center'>
           <img height={28} alt='logo' src={require('../assets/logo.png')}></img>
           Estatery
         </span>
